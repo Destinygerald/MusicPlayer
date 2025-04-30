@@ -3,7 +3,8 @@ import './style.css'
 import { IoGrid } from 'react-icons/io5'
 import { MdTableRows } from 'react-icons/md'
 import { tPlaylistHeader, tPlaylistMain } from '../../../../types'
-import { GridCard } from './components'
+import { GridCard, RowCard } from './components'
+import { Route, Routes } from 'react-router-dom'
 
 function PlaylistHeader ({displayType, rowDisplay, gridDisplay}: tPlaylistHeader) {
 
@@ -31,7 +32,15 @@ function PlaylistMain ({displayType}: tPlaylistMain) {
     
     function DisplayReturn () {
         if (displayType == 0) {
-            return <></>
+            return (
+                <div className='playlist-main-row'>
+                    {
+                        Array.from(Array(32)).map((_, i) => (
+                            <RowCard key={i} cover_image='' playlist_name={`Playlist ${i}`} no_of_songs={30} />
+                        ))
+                    }
+                </div>
+            )
         } else {
             return (
                 <div className='playlist-main-grid'>
@@ -54,9 +63,7 @@ function PlaylistMain ({displayType}: tPlaylistMain) {
     )
 }
 
-export default function Page () {
-
-    
+function PageIndex () {
     const [ displayType, setDisplayType ] = useState<number>(0)
 
     function gridDisplay () {
@@ -76,5 +83,13 @@ export default function Page () {
             <PlaylistHeader displayType={displayType} gridDisplay={gridDisplay} rowDisplay={rowDisplay} />
             <PlaylistMain displayType={displayType} />
         </div>
+    )
+}
+
+export default function Page () {
+    return (
+        <Routes>
+            <Route index element={<PageIndex />} />
+        </Routes>
     )
 }

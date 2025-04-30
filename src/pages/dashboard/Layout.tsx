@@ -15,7 +15,7 @@ export default function Layout () {
                 <div className='dashboard-main'>
                     <Routes>
                         <Route path='/' element={<Feeds />} />
-                        <Route path='/playlist' element={<Playlist /> } />
+                        <Route path='/playlist/*' element={<Playlist /> } />
                         <Route path='*' element={<Feeds />} />
                     </Routes>
                 </div>
