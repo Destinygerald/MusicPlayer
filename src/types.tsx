@@ -64,9 +64,35 @@ export type tFeedPlaylistCard = {
     release_date: string
 }
 
+export type tFeedArtistCard = {
+    artist_name: string,
+    artist_image?: string,
+    no_of_songs: number
+}
+
+export type tFeedsAlbumCard = {
+    album_name: string,
+    artist_name: string,
+    no_of_songs: number
+}
+
 export type tFeedsSideCard = {
     cover_image: string,
     song_title: string,
     song_artist: string,
     playtime: number
 }
+
+export type tPlaylistHeader = {
+    displayType: number,
+    gridDisplay: () => void,
+    rowDisplay: () => void
+}
+
+export type tGridCard = {
+    cover_image: string,
+    playlist_name: string,
+    no_of_songs: number
+}
+
+export type tPlaylistMain = Omit<tPlaylistHeader, 'gridDisplay' | 'rowDisplay'>

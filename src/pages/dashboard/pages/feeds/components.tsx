@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { tFeedPlaylistCard, tFeedsSideCard, tPlaylistOfTheDay, tRandomSongCard } from '../../../../types'
+import { tFeedArtistCard, tFeedPlaylistCard, tFeedsAlbumCard, tFeedsSideCard, tPlaylistOfTheDay, tRandomSongCard } from '../../../../types'
 import './style.css'
 import { CiMenuKebab } from 'react-icons/ci'
 import { BiPlay } from 'react-icons/bi'
@@ -76,16 +76,31 @@ export function FeedPlaylistCard ({ playlist_title='title', playlist_cover_image
     )
 }
 
-export function FeedArtistCard () {
+export function FeedArtistCard ({ artist_image, artist_name, no_of_songs }: tFeedArtistCard) {
     return (
-        <div className='feed-artist-card'></div>
+        <div className='feed-artist-card'>
+            <div>
+                <img src={artist_image} />
+            </div>
+
+            <span>{artist_name}</span>
+
+            <span>{no_of_songs}  Songs</span>
+
+            <span> <BiPlay />  </span>
+        </div>
     )
 }
 
 
-export function FeedAlbumsCard () {
+export function FeedAlbumsCard ({album_name, artist_name, no_of_songs}:tFeedsAlbumCard) {
     return (
-        <div className='feed-album-card'></div>
+        <div className='feed-album-card'>
+            <span>{album_name}</span>
+            <span>{artist_name}</span>
+            <span>{no_of_songs} Songs</span>
+            <span> <BiPlay /> </span>
+        </div>
     )
 }
 

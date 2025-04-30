@@ -111,7 +111,7 @@
     gap: 12px;
 }
 
-.feed-playlist-card {
+.feed-playlist-card, .feed-artist-card, .feed-album-card {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -119,6 +119,7 @@
     font-size: .72rem;
     color: rgb(223, 223, 223);
     font-weight: 300;
+    padding: 0 16px;
 }
 
 .feed-playlist-card-identifier, .feed-playlist-card > div:nth-child(2) {
@@ -145,6 +146,36 @@
     display: flex;
     cursor: pointer;
 }
+
+.feed-artist-card > div:first-child {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: rgb(120, 120, 120);
+}
+
+.feed-artist-card > span:last-child {
+    font-size: 1.12rem;
+    cursor: pointer;
+}
+
+.feed-album-card {
+    padding: 18px 16px;
+}
+
+.feed-album-card > span:first-child {
+    font-size: .88rem;
+    font-weight: 500;
+}
+
+.feed-album-card > span:nth-child(2), .feed-album-card > span:nth-child(3) {
+    font-style: italic;
+}
+
+.feed-album-card:not(:last-child) {
+    border-bottom: 1px solid rgb(120, 120, 120, .2);
+}
+
 
 .feeds-side {
     height: 100%;

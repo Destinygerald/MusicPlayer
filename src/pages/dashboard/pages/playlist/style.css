@@ -1,0 +1,150 @@
+.playlist {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+
+.playlist-main {
+    width: 100%;
+    height: calc(100% - 46px);
+    overflow-y: auto;
+    padding-right: 8px;
+    padding-bottom: 24px;
+}
+
+.playlist-main::-webkit-scrollbar {
+    background-color: transparent;
+    width: 6px;
+}
+
+.playlist-main::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.playlist-main-grid {
+    width: 100%;
+    display: grid;
+    height: fit-content;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+}
+
+.playlist-header {
+    width: 100%;
+    height: 30px;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.playlist-header-sort-btn {
+    font-size: .8rem;
+    color: rgb(120, 120, 120);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    span:nth-child(1) {
+        display: flex;
+        font-size: .55rem;
+        align-items: center;
+        height: fit-content;
+    }
+}
+
+.playlist-display-control {
+    color: rgb(120, 120, 120);
+    font-size: .7rem;
+    display: flex;
+    gap: 8px;
+    display: flex;
+    background-color: rgb(80, 80, 80, .4);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.playlist-display-control > span {
+    display: flex;
+    padding: 7px 22px;
+    cursor: pointer;
+}
+
+.playlist-display-selected {
+    background-color: rgb(80, 80, 80);
+    color: white;
+}
+
+.playlist-grid-card {
+    width: 100%;
+    height: 200px;
+    /* aspect-ratio: 9 / 10; */
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    cursor: pointer;
+    /* Change the width and height to depend on the grid */
+}
+
+.playlist-grid-card-cover {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+    /* box-shadow: 0 0 2px rgb(200, 200, 200); */
+    overflow: hidden;
+    position: relative;
+}
+
+.playlist-grid-card-cover > div:nth-child(1), 
+.playlist-grid-card-cover > div:nth-child(2),
+.playlist-grid-card-cover > div:nth-child(3) {
+    position: absolute;
+    width: 100%;
+    height: 90%;
+    bottom: 0;
+    border-radius: 12px;
+}
+
+
+.playlist-cover-alt {
+    color: rgb(120, 120, 120);
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    height: 100%;
+    font-size: 3rem;
+}
+
+.playlist-grid-card-cover > div:nth-child(3) {
+    /* z-index: 2; */
+    background-color: rgb(45, 45, 45);
+}
+
+.playlist-grid-card-cover > div:nth-child(2) {
+    /* z-index: 1; */
+    bottom: 6%;
+    background-color: rgb(63, 63, 63);
+    scale: .96;
+}
+
+.playlist-grid-card-cover > div:nth-child(1) {
+    bottom: 10%;
+    scale: .92;
+    /* z-index: 0; */
+    background-color: rgb(85, 85, 85);
+}
+
+.playlist-grid-card-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: .72rem;
+    color: rgb(207, 207, 207);
+}

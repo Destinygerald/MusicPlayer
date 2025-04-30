@@ -1,5 +1,5 @@
 import { tFeedsItemNav } from '../../../../types'
-import { RecentlyPlayedCard, PlaylistOfTheDayCard, RandomSongCard, SubscribeCard } from './components'
+import { RecentlyPlayedCard, PlaylistOfTheDayCard, RandomSongCard, SubscribeCard, FeedArtistCard, FeedAlbumsCard } from './components'
 import './style.css'
 import { useState } from 'react'
 import { FeedPlaylistCard } from './components'
@@ -33,12 +33,55 @@ function FeedsNavItem ({ active, label, navChange }:tFeedsItemNav) {
 }
 
 
+function FeedsPlaylist () {
+    return (
+        <>
+            { Array.from(Array(12)).map(_ => 
+                (<FeedPlaylistCard /> )
+            )}
+        </>
+    )
+}
+
+function FeedArtist () {
+    return (
+        <>
+            { Array.from(Array(12)).map(_ => 
+                (<FeedArtistCard artist_name='Artist name' no_of_songs={50} /> )
+            )}
+        </>
+    )
+}
+
+function FeedAlbum () {
+    return (
+        <>
+            { Array.from(Array(12)).map(_ => 
+                (<FeedAlbumsCard artist_name='Artist name' no_of_songs={50} album_name='Album' /> )
+            )}
+        </>
+    )
+}
+
 function FeedsMainBtm () {
     
     const [ active, setActive ] = useState<string>('Playlist')
 
     function navChange (arg: string) {
         setActive(arg)
+    }
+
+    function feedMainDisplay () {
+        if (active == 'Playlist') {
+            return <FeedsPlaylist />
+        } else if ( active == 'Artists' ) {
+            return <FeedArtist />
+        } else if (active == 'Albums') {
+            return <FeedAlbum />
+        }
+        else {
+            return <></>
+        }
     }
     
     return (
@@ -53,9 +96,7 @@ function FeedsMainBtm () {
             <div className='feeds-main-btm-cnt'>
                 <div className='feeds-main-btm-container'>
                     {
-                        Array.from(Array(12)).map(_ => (
-                            <FeedPlaylistCard />
-                        ))
+                        feedMainDisplay()
                     }
                 </div>
             </div>
