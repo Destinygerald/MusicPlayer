@@ -1,0 +1,298 @@
+.feeds {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.feeds-main {
+    width: 72%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.feeds-main-top {
+    width: 100%;
+    display: flex;
+    gap: 12px;
+    height: 36%;   
+}
+
+.playlist-of-the-day-card, .random-song-card {
+    height: 100%;
+    background-color: rgb(255, 255, 255, .1);
+    border-radius: 16px;
+}
+
+.playlist-of-the-day-card {
+    width: 35%;
+}
+
+.random-song-card {
+    width: 65%;
+}
+
+.feeds-main-btm {
+    width: 100%;
+    height: 60%;
+    border-top: 1px solid rgb(80, 80, 80, .3);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.feeds-nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: .66rem;
+}
+
+.feeds-nav-item {
+    color: rgb(200, 200, 200);
+    font-weight: 300;
+    padding: 10px 24px;
+    cursor: pointer;
+    position: relative;
+}
+
+.feeds-nav-active {
+    color: var(--primary-color);
+}
+
+.feeds-nav-active-indicator {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.feeds-nav-active-indicator > div:first-child {
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+.feeds-nav-active-indicator > div:last-child {
+    width: 100%;
+    height: 12px;
+    background: linear-gradient(rgb(232, 71, 17, .6) , transparent 60%);
+}
+
+.feeds-main-btm-cnt {
+    width: 100%;
+    height: 84%;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+.feeds-main-btm-cnt::-webkit-scrollbar {
+    background-color: transparent;
+    width: 6px;
+}
+
+.feeds-main-btm-cnt::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+
+.feeds-main-btm-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    gap: 12px;
+}
+
+.feed-playlist-card {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: .72rem;
+    color: rgb(223, 223, 223);
+    font-weight: 300;
+}
+
+.feed-playlist-card-identifier, .feed-playlist-card > div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.feed-playlist-card-identifier > div:first-child {
+    width: 48px;
+    height: 48px;
+    border-radius: 4px;
+    background-color: rgb(120, 120, 120);
+}
+
+.feed-playlist-card > div:nth-child(4) {
+    font-size: 1.12rem;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.feed-playlist-card > div:nth-child(4) > span {
+    display: flex;
+    cursor: pointer;
+}
+
+.feeds-side {
+    height: 100%;
+    width: 26%;
+    display: flex;
+    flex-direction: column;
+}
+
+.recent-play {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    height: 70%;
+    /* background-color: rgb(80, 80, 80, .1); */
+    padding: 12px;
+    border-radius: 10px;
+}
+
+.recent-play-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    span:first-child {
+        font-size: .8rem;
+        color: rgb(240, 240, 240);
+    }
+
+    span:last-child {
+        cursor: pointer;
+        font-size: .66rem;
+        color: rgb(120, 120, 120);
+    }
+}
+
+.recent-play-cnt {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+}
+
+.recently-played-card {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgb(120, 120, 120, .2);
+    padding: 12px 0;
+}
+
+.recently-played-card:last-child {
+    border-bottom: none;
+}
+
+.recently-played-card-cnt {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.recently-played-card-cnt > div:first-child {
+    width: 56px;
+    height: 56px;
+    background-color: rgb(120, 120, 120);
+    border-radius: 8px;
+}
+
+.recently-played-card-cnt > div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+}
+
+.recently-played-card-cnt > div:nth-child(2) > span:first-child {
+    font-size: .8rem;
+    color: rgb(240, 240, 240)
+}
+
+.recently-played-card-cnt > div:nth-child(2) > span:last-child {
+    font-size: .66rem;
+    color: rgb(140, 140, 140);
+}
+
+.recently-played-card > span:last-child {
+    font-size: .88rem;
+    color: rgb(140, 140, 140);
+}
+
+.ads-section {
+    width: 100%;
+    height: 32%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 2px rgb(120, 120, 120, .4);
+    margin-bottom: 6px;
+}
+
+.subscribe-card {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    padding: 12px 20px;
+    /* background: linear-gradient(120deg, rgb(123, 46, 46), rgb(74, 20, 47) ); */
+    background: linear-gradient(120deg, rgb(40, 40, 40, .4), rgb(40, 40, 40, .1));
+}
+
+.subscribe-card-cnt {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 80%;
+    position: relative;
+    z-index: 1;
+}
+
+.subscribe-card-cnt >  span:first-child {
+    font-size: .88rem;
+    font-weight: 600;
+    color: rgb(230, 230, 230)
+}
+
+.subscribe-card-cnt > span:nth-child(2) {
+    font-size: .66rem;
+    font-weight: 200;
+    color: rgb(230, 230, 230)
+}
+
+.subscribe-card-cnt > button {
+    width: fit-content;
+    border: none;
+    padding: 10px 32px;
+    font-size: .72rem;
+    border-radius: 20px;
+    cursor: pointer;
+    color: white;
+    background-color: var(--primary-color);
+}
+
+.subscribe-card > div:last-child {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    position: absolute;
+    background: radial-gradient(var(--primary-color), rgba(211, 152, 62, 0.356) 70%);
+    top: -50%;
+    right: -20%;
+    filter: blur(16px);
+}
