@@ -1,6 +1,7 @@
 import { tFeedsItemNav } from '../../../../types'
 import { RecentlyPlayedCard, PlaylistOfTheDayCard, RandomSongCard, SubscribeCard, FeedArtistCard, FeedAlbumsCard } from './components'
 import './style.css'
+import './style.size_960.css'
 import { useState } from 'react'
 import { FeedPlaylistCard } from './components'
 
@@ -37,7 +38,7 @@ function FeedsPlaylist () {
     return (
         <>
             { Array.from(Array(12)).map(_ => 
-                (<FeedPlaylistCard /> )
+                (<FeedPlaylistCard playlist_title='title' playlist_cover_image='' tracks={88} playtime={264} release_date='27, April 2024' /> )
             )}
         </>
     )

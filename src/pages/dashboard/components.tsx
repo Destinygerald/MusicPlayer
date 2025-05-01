@@ -1,6 +1,7 @@
 import { useLocation, useNavigate } from 'react-router-dom'
 import { tGroupItem, tSidebarGroup } from '../../types'
 import './style.css'
+import './style.size_960.css'
 import { SidebarNav1, SidebarNav2, SidebarNav3 } from './statics'
 import React, { useState } from 'react'
 import { BiSearch, BiSkipNext, BiSkipPrevious } from 'react-icons/bi'
@@ -8,6 +9,15 @@ import { FaPauseCircle, FaPlayCircle, FaVolumeDown, FaVolumeMute } from 'react-i
 import { MdFavorite } from 'react-icons/md'
 import { IoIosShuffle } from 'react-icons/io'
 import { LuRepeat, LuRepeat1 } from 'react-icons/lu'
+
+function SidebarIndicator () {
+    return (
+        <div className='sidebar-selected-indicator'>
+            <div />
+            <div />
+        </div>
+    )
+}
 
 function SidebarItem_v1 ({ nav, label, icon }: tGroupItem) {
     
@@ -27,9 +37,30 @@ function SidebarItem_v1 ({ nav, label, icon }: tGroupItem) {
             return 'sidebar-selected-item'
         } else if (location.pathname == '/dashboard' && label == 'Feed') {
             return 'sidebar-selected-item'
+        } else if ((location.pathname == '/playlist' || location.pathname.includes('/playlist')) && label == 'Playlist') {
+            return 'sidebar-selected-item'
         }
         else {
             return 'sidebar-item'
+        }
+    }
+
+    function indicator () {
+        if (location?.state?.current == label ) {
+            return (
+                <SidebarIndicator />
+            )
+        } else if (location.pathname == '/dashboard' && label == 'Feed') {
+            return (
+                <SidebarIndicator />
+            )
+        } else if ((location.pathname == '/playlist' || location.pathname.includes('/playlist')) && label == 'Playlist') {
+            return (
+                <SidebarIndicator />
+            )
+        }
+        else {
+            return <></>
         }
     }
 
@@ -38,14 +69,7 @@ function SidebarItem_v1 ({ nav, label, icon }: tGroupItem) {
             <span>{ icon }</span>
             <span>{ label }</span>
             {
-                location?.state?.current == label || (location.pathname == '/dashboard' && label == 'Feed')
-                ?
-                <div className='sidebar-selected-indicator'>
-                    <div />
-                    <div />
-                </div>
-                :
-                <></>
+                indicator()
             }
         </div>
     )   
@@ -250,6 +274,15 @@ export function Player () {
                     <div />
                 </div>
             </div>
+        </div>
+    )
+}
+
+
+export function SongCard () {
+    return (
+        <div className='song-card'>
+            
         </div>
     )
 }

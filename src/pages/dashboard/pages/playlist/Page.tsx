@@ -5,6 +5,7 @@ import { MdTableRows } from 'react-icons/md'
 import { tPlaylistHeader, tPlaylistMain } from '../../../../types'
 import { GridCard, RowCard } from './components'
 import { Route, Routes } from 'react-router-dom'
+import { PlaylistSongs } from './Playlist_songs'
 
 function PlaylistHeader ({displayType, rowDisplay, gridDisplay}: tPlaylistHeader) {
 
@@ -36,7 +37,7 @@ function PlaylistMain ({displayType}: tPlaylistMain) {
                 <div className='playlist-main-row'>
                     {
                         Array.from(Array(32)).map((_, i) => (
-                            <RowCard key={i} cover_image='' playlist_name={`Playlist ${i}`} no_of_songs={30} />
+                            <RowCard id='73882392837230829' key={i} cover_image='' playlist_name={`Playlist ${i}`} no_of_songs={30} />
                         ))
                     }
                 </div>
@@ -46,7 +47,7 @@ function PlaylistMain ({displayType}: tPlaylistMain) {
                 <div className='playlist-main-grid'>
                     {
                         Array.from(Array(32)).map((_, i) => (
-                            <GridCard key={i} cover_image='' playlist_name={`Playlist ${i}`} no_of_songs={30} />
+                            <GridCard id='73882392837230829' key={i} cover_image='' playlist_name={`Playlist ${i}`} no_of_songs={30} />
                         ))
                     }
                 </div>
@@ -90,6 +91,7 @@ export default function Page () {
     return (
         <Routes>
             <Route index element={<PageIndex />} />
+            <Route path='/:id' element={<PlaylistSongs />} />
         </Routes>
     )
 }

@@ -2,10 +2,18 @@ import { useState } from 'react'
 import { tGridCard } from '../../../../types'
 import './style.css'
 import { FaMusic } from 'react-icons/fa6'
+import { useNavigate } from 'react-router-dom'
 
-export function GridCard ({ cover_image, playlist_name, no_of_songs }: tGridCard) {
+export function GridCard ({ id, cover_image, playlist_name, no_of_songs }: tGridCard) {
+    
+    const navigate = useNavigate()
+
+    function handleClick () {
+        navigate(id)
+    }
+    
     return (
-        <div className='playlist-grid-card'>
+        <div className='playlist-grid-card' onClick={handleClick}>
             <div className='playlist-grid-card-cover'>
                 <div />
                 <div />
@@ -20,9 +28,10 @@ export function GridCard ({ cover_image, playlist_name, no_of_songs }: tGridCard
     )
 }
 
-export function RowCard ({ cover_image, playlist_name, no_of_songs }: tGridCard) {
+export function RowCard ({ id, cover_image, playlist_name, no_of_songs }: tGridCard) {
     
     const [ saved, setSaved ] = useState<boolean>(false)
+    const navigate = useNavigate()
 
     function savePlaylist () {
         setSaved(true)
@@ -31,9 +40,13 @@ export function RowCard ({ cover_image, playlist_name, no_of_songs }: tGridCard)
     function unsavePlaylist () {
         setSaved(false)
     }
+
+    function handleClick () {
+        navigate(id)
+    }
     
     return (
-        <div className='playlist-row-card'>
+        <div className='playlist-row-card' onClick={handleClick}>
             <div className='playlist-row-card-img'>
                 <div> 
                     {

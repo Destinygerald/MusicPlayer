@@ -90,9 +90,18 @@ export type tPlaylistHeader = {
 }
 
 export type tGridCard = {
+    id: string,
     cover_image: string,
     playlist_name: string,
     no_of_songs: number
 }
 
 export type tPlaylistMain = Omit<tPlaylistHeader, 'gridDisplay' | 'rowDisplay'>
+
+export type tPlaylistSongsHdr = {
+    playlist_name: string, 
+    year: string, 
+    no_of_songs: number, 
+    playtime: number,
+    added_by: string
+}

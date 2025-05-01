@@ -1,4 +1,5 @@
 import './style.css'
+import './style.size_960.css'
 import { Routes, Route } from 'react-router-dom'
 import { Player, Sidebar, Topbar } from './components'
 import Feeds from './pages/feeds/Page'
