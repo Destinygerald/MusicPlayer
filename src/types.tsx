@@ -2,7 +2,8 @@ import React from "react"
 import { IconType } from "react-icons"
 
 export type tPageIndicatorContext = {
-
+    state: number,
+    actions: tPageIndicatorContextActions
 }
 
 export type tContextChildren = {
@@ -13,9 +14,15 @@ type tPageIndicatorContextActions = {
     changeCurrentPage: (arg: number) => void
 }
 
-export type tPageIndicatorContextValue = {
-    state: number,
-    actions: tPageIndicatorContextActions
+type tSliderContextActions = {
+    openSlider: () => void,
+    closeSlider: () => void
+}
+
+
+export type tSliderContext = {
+    state: boolean,
+    actions: tSliderContextActions
 }
 
 export type tDropMenu = {
@@ -58,7 +65,7 @@ export type tFeedsItemNav = {
 
 export type tFeedPlaylistCard = {
     playlist_title: string, 
-    playlist_cover_image: string,
+    playlist_cover_image?: string,
     tracks: number,
     playtime: number,
     release_date: string
@@ -77,7 +84,7 @@ export type tFeedsAlbumCard = {
 }
 
 export type tFeedsSideCard = {
-    cover_image: string,
+    cover_image?: string,
     song_title: string,
     song_artist: string,
     playtime: number
@@ -91,7 +98,7 @@ export type tPlaylistHeader = {
 
 export type tGridCard = {
     id: string,
-    cover_image: string,
+    cover_image?: string,
     playlist_name: string,
     no_of_songs: number
 }
@@ -104,4 +111,11 @@ export type tPlaylistSongsHdr = {
     no_of_songs: number, 
     playtime: number,
     added_by: string
+}
+
+export type tSongCard = {
+    cover_image?: string, 
+    song_name: string, 
+    artist: string, 
+    runtime: number
 }

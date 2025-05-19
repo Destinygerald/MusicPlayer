@@ -1,9 +1,0 @@
-@media (max-width: 960px) {
-    .feeds-side {
-        display: none;
-    }
-
-    .feeds-main {
-        width: 100%;
-    }
-}

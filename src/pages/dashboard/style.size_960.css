@@ -1,8 +1,0 @@
-@media (max-width: 960px) {
-    .sidebar {
-        width: 16%;
-        height: calc(100% - 80px);
-        overflow: hidden;
-        min-width: 220px;
-    }
-}
